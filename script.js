@@ -9,7 +9,20 @@ console.log(getComputerChoice());
 
 // Function that take user input and turn into number
 function getHumanChoice() {
-    let choice = prompt('rock, paper, or scissors?')
+    // Prompt user's choice
+    let choice = prompt('rock, paper, or scissors?').toLowerCase();
+    // turn text into a value
+    switch (choice) {
+        case 'rock' :
+            return 0;
+            break;
+        case 'paper' :
+            return 1;
+            break;
+        case 'scissors' :
+            return 2;
+            break;
+    }
 }
 
-getHumanChoice();
+console.log(getHumanChoice());
