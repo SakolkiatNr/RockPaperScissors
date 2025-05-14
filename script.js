@@ -94,6 +94,7 @@ function playGame() {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         
+        console.log('Round ' + ( i+1 ));
         playRound(humanSelection, computerSelection);
         console.log('Player score: ' + humanScore + '  |  Computer score: ' + computerScore);
         console.log('');
