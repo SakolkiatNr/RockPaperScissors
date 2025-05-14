@@ -10,6 +10,7 @@
  - Generating random choices and comparing outcomes
  - Structuring a simple project from logic to execution
 
-## 🔗 Live Demo
+##  Live Demo
 This game will be played entirely on console
+
 [Play the Game](https://sakolkiatnr.github.io/RockPaperScissors/)
