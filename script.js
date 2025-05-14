@@ -15,13 +15,14 @@ function getHumanChoice() {
     switch (choice) {
         case 'rock' :
             return 0;
-            break;
         case 'paper' :
             return 1;
-            break;
         case 'scissors' :
             return 2;
-            break;
+        default:
+            console.log('Invalid choice. Please enter rock, paper, or scissors')
+            return getHumanChoice();
+            
     }
 }
 // console.log(getHumanChoice());
