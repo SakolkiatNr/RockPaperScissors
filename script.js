@@ -64,7 +64,6 @@ function playGame() {
                     break;
                 case 1:
                     console.log("It's a tie!");
-                    computerScore ++;
                     break;
                 case 2:
                     console.log("You lose! Scissors beats Paper");
@@ -96,9 +95,16 @@ function playGame() {
         const computerSelection = getComputerChoice();
         
         playRound(humanSelection, computerSelection);
-        console.log('Player score: ' + humanScore);
-        console.log('Computer score: ' + computerScore);
+        console.log('Player score: ' + humanScore + '  |  Computer score: ' + computerScore);
         console.log('');
+    }
+
+    if (humanScore > computerScore) {
+        console.log('Congratulations! You Win.');
+    } else if (humanScore == computerScore) {
+        console.log("It's a draw!");
+    } else {
+        console.log('You lose!');
     }
 }
 
