@@ -1,6 +1,6 @@
 # RockPaperScissors
 
- ## overview
+ ## Overview
  A classic Rock Paper Scissors game built with JavaScript. This project focuses on applying core Javascript concepts and logic structuring.
 
 
