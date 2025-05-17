@@ -43,13 +43,16 @@ function playGame() {
             switch (computerChoice) {
                 case 0:
                     console.log("It's a tie!");
+                    displayResult("It's a tie!")
                     break;
                 case 1:
                     console.log("You lose! Paper beats Rock");
+                    displayResult("You lose! Paper beats Rock")
                     computerScore ++;
                     break;
                 case 2:
                     console.log("You win! Rock beats Scissors");
+                    displayResult("You win! Rock beats Scissors");
                     humanScore++;
                     break;
             }
@@ -58,13 +61,16 @@ function playGame() {
             switch (computerChoice) {
                 case 0:
                     console.log("You win! Paper beats Rock");
+                    displayResult("You win! Paper beats Rock")
                     humanScore++;
                     break;
                 case 1:
                     console.log("It's a tie!");
+                    displayResult("It's a tie!");
                     break;
                 case 2:
                     console.log("You lose! Scissors beats Paper");
+                    displayResult("You lose! Scissors beats Paper");
                     computerScore++;
                     break;
             }
@@ -73,14 +79,17 @@ function playGame() {
             switch (computerChoice) {
                 case 0:
                     console.log('You lose! Rock beats Scissors');
+                    displayResult('You lose! Rock beats Scissors');
                     computerScore++;
                     break;
                 case 1:
                     console.log('You Win! Scissors beats Paper');
+                    displayResult('You Win! Scissors beats Paper');
                     humanScore++;
                     break;
                 case 2:
                     console.log("It's a tie!");
+                    displayResult("It's a tie!");
                     break;
             }
         }
@@ -98,9 +107,11 @@ function playGame() {
     });
 
     function displayResult(text) {
+        const result = document.querySelector('.result');
         const content = document.createElement("p");
         content.classList.add('result');
         content.textContent = text;
+        result.appendChild(content);
     }
 
     
