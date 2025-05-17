@@ -75,7 +75,8 @@ body {
     padding: 24px;
 }
 
-.buttons button {
+.buttons button,
+button {
     font-family: 'Zen Dots', 'san-serif';
     color: #ff003c;
     font-size: 28px;
@@ -94,7 +95,8 @@ body {
     
 }
 
-.buttons button:hover {
+.buttons button:hover,
+button:hover {
     color: rgb(13, 10, 26);
     background-color: rgb(245, 55, 16);
     filter: drop-shadow(0px 0px 12px rgb(245, 55, 16));
@@ -102,7 +104,8 @@ body {
     transform: scale(1.02);
 }
 
-.buttons button:active {
+.buttons button:active,
+button:active {
     background-color: #ff002f; 
     color: #0d0a1a;             
     filter: drop-shadow(0px 0px 16px #ff002f);
@@ -118,6 +121,16 @@ body {
     color: #CCCCCC;
     text-align: center;
     /* text-transform: uppercase; */
+}
+
+.reset {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
+button {
+    width: 774px;
 }
 
 
