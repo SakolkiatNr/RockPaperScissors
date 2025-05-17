@@ -23,6 +23,7 @@ function getHumanChoice(choice) {
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    let isGameOver = false;
 
     // takes the human and computer player choices as argument
     // play a single round
@@ -32,12 +33,14 @@ function playGame() {
 
         //  compare choice
         // 0 = rock, 1 = paper, 2 = scissors
+        if (humanChoice == computerChoice){
+            console.log("It's a tie!");
+            displayResult("It's a tie!");
+            return;
+        }
+
         if (humanChoice == 0) {
             switch (computerChoice) {
-                case 0:
-                    console.log("It's a tie!");
-                    displayResult("It's a tie!")
-                    break;
                 case 1:
                     console.log("You lose! Paper beats Rock");
                     displayResult("You lose! Paper beats Rock")
@@ -57,18 +60,13 @@ function playGame() {
                     displayResult("You win! Paper beats Rock")
                     humanScore++;
                     break;
-                case 1:
-                    console.log("It's a tie!");
-                    displayResult("It's a tie!");
-                    break;
                 case 2:
                     console.log("You lose! Scissors beats Paper");
                     displayResult("You lose! Scissors beats Paper");
                     computerScore++;
                     break;
             }
-        }
-        else {
+        } else {
             switch (computerChoice) {
                 case 0:
                     console.log('You lose! Rock beats Scissors');
@@ -79,10 +77,6 @@ function playGame() {
                     console.log('You Win! Scissors beats Paper');
                     displayResult('You Win! Scissors beats Paper');
                     humanScore++;
-                    break;
-                case 2:
-                    console.log("It's a tie!");
-                    displayResult("It's a tie!");
                     break;
             }
         }
@@ -96,14 +90,11 @@ function playGame() {
         result.appendChild(content);
     }
 
-    function displayHumanScore() {
-        const scoreDisplay = document.querySelector('#player');
-        scoreDisplay.textContent = humanScore;
-    }
-
-    function displayComputerScore() {
-        const scoreDisplay = document.querySelector('#computer');
-        scoreDisplay.textContent = computerScore;
+    function displayScore() {
+        const humanScoreDisplay = document.querySelector('#player');
+        const computerScoreDisplay = document.querySelector('#computer');
+        humanScoreDisplay.textContent = humanScore;
+        computerScoreDisplay.textContent = computerScore;
     }
 
     function checkWinner() {
@@ -115,24 +106,26 @@ function playGame() {
                 winner.textContent = 'YOU LOSE!';
             }
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
-    
+
+
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            if (checkWinner()) {
+            if (checkWinner() || isGameOver) {
                 e.stopImmediatePropagation();
                 return;
             }
             const playerSelection = getHumanChoice(button.id);
             const computerSelection = getComputerChoice();
-
             playRound(playerSelection, computerSelection);
-            displayHumanScore();
-            displayComputerScore();
+            displayScore();
+            
+            if (checkWinner()) {
+                isGameOver = true;
+            }
             
         });
     });
