@@ -1,8 +1,9 @@
 // Function that return the computer choice
 // randomly return 0-2 as a "rock", "paper" or "scissors"
 // 0 = rock, 1 = paper, 2 = scissors
+
+// Get a random number from 0 1 2 
 function getComputerChoice() {
-    // Get a random number from 0 1 2 
     return Math.floor(Math.random() * 3);
 }
 
@@ -88,6 +89,8 @@ function playGame() {
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             const playerSelection = getHumanChoice(button.id);
+            const computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
         });
     });
 
