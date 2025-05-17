@@ -18,6 +18,7 @@ body {
     font-family: 'abduction2002', sans-serif,'';
 }
 .logo {
+    margin: 18px;
     display: flex;
     justify-content: center;
     flex-shrink: 1;
@@ -39,7 +40,8 @@ body {
 .score {
     color: #CCCCCC;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 200px;
 }
 
 .player,
@@ -49,7 +51,11 @@ body {
     flex-direction: column;
     align-items: flex-end;
 }
+.score-container {
+    
+    margin: 25px;
 
+}
 #player, #computer {
     margin: 0;
     padding: 20px 0px;
@@ -79,12 +85,23 @@ body {
     box-sizing: border-box;
     width: 250px;
     padding: 12px 0px;
-    
+    filter: drop-shadow(0px 0px 7px #ff003c);
     border-radius: 8px;
     background-color: transparent;
-    border: solid #FF003C 3px;
+    border: solid #ff003c 2px;
+    transition: all 0.3s ease;
+    margin: 24px 0px;
     
 }
+
+.buttons button:hover {
+    color: rgb(13, 10, 26);
+    background-color: rgb(245, 55, 16);
+    filter: drop-shadow(0px 0px 12px rgb(245, 55, 16));
+    border: solid rgb(245, 55, 16) 2px;
+    transform: scale(1.02);
+}
+
 
 .result-container,
 .reset {
