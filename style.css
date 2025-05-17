@@ -1,3 +1,15 @@
 .logo {
     text-align: center;
 }
+
+.score, .buttons, #winner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.result-container,
+.reset {
+    text-align: center;
+}
