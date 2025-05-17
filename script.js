@@ -7,9 +7,7 @@ function getComputerChoice() {
 }
 
 // Function that take user input and turn into number
-function getHumanChoice() {
-    // Prompt user's choice
-    let choice = prompt('rock, paper, or scissors?').toLowerCase();
+function getHumanChoice(choice) {
     // turn text into a value
     switch (choice) {
         case 'rock' :
@@ -18,10 +16,6 @@ function getHumanChoice() {
             return 1;
         case 'scissors' :
             return 2;
-        default:
-            console.log('Invalid choice. Please enter rock, paper, or scissors')
-            return getHumanChoice();
-            
     }
 }
 // console.log(getHumanChoice());
@@ -87,12 +81,16 @@ function playGame() {
             }
         }
     }
+    
+    // User button input
+    const buttons = document.querySelectorAll('button');
 
-    const rockButt = document.querySelector('#rock');
-    const paperButt = document.querySelector('#paper');
-    const scissorsButt = document.querySelector('#scissors');
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const playerSelection = getHumanChoice(button.id);
+        });
+    });
 
-    console.log(rockButt);
 
     // // Play 5 rounds
     // for (let i = 0; i < 5; i++) {
