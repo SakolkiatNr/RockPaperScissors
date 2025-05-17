@@ -46,7 +46,7 @@ function playGame() {
                 case 2:
                     console.log("You win! Rock beats Scissors");
                     displayResult("You win! Rock beats Scissors");
-                    humanScore++;
+                    changeHumanScore();
                     break;
             }
         }
@@ -55,7 +55,7 @@ function playGame() {
                 case 0:
                     console.log("You win! Paper beats Rock");
                     displayResult("You win! Paper beats Rock")
-                    humanScore++;
+                    changeHumanScore();
                     break;
                 case 1:
                     console.log("It's a tie!");
@@ -78,7 +78,7 @@ function playGame() {
                 case 1:
                     console.log('You Win! Scissors beats Paper');
                     displayResult('You Win! Scissors beats Paper');
-                    humanScore++;
+                    changeHumanScore();
                     break;
                 case 2:
                     console.log("It's a tie!");
