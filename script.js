@@ -34,6 +34,9 @@ function playGame() {
     // increments the round winner's score
     // log winner announcement
     function playRound(humanChoice, computerChoice) {
+
+        const result = document.querySelector('.result');
+
         //  compare choice
         // 0 = rock, 1 = paper, 2 = scissors
         if (humanChoice == 0) {
@@ -94,18 +97,12 @@ function playGame() {
         });
     });
 
+    function displayResult(text) {
+        const content = document.createElement("p");
+        content.classList.add('result');
+        content.textContent = text;
+    }
 
-    // // Play 5 rounds
-    // for (let i = 0; i < 5; i++) {
-    //     // Get player's choice
-    //     const humanSelection = getHumanChoice();
-    //     const computerSelection = getComputerChoice();
-        
-    //     console.log('Round ' + ( i+1 ));
-    //     playRound(humanSelection, computerSelection);
-    //     console.log('Player score: ' + humanScore + '  |  Computer score: ' + computerScore);
-    //     console.log('');
-    // }
     
     // if (humanScore > computerScore) {
     //     console.log('Congratulations! You Win.');
