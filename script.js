@@ -106,16 +106,35 @@ function playGame() {
 
         // clear screen
         displayScore();
+
         const result = document.querySelector('.result');
         const winner = document.querySelector('#winner');
         result.textContent = "";
         winner.textContent = "";
     }
 
+    function createResetButton() {
+        if (document.querySelector('.reset-button')) return;
+
+        const target = document.querySelector('.reset');
+        const resetButton = document.createElement('button');
+        resetButton.setAttribute('class', 'reset-button');
+        resetButton.textContent = 'Play again';
+        target.appendChild(resetButton);
+
+        resetButton.addEventListener('click', () => {
+            reset();
+            resetButton.remove();
+        })
+
+    }
+
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            if (isGameOver) return;
+            if (isGameOver) {
+                return;
+            }
 
             const playerSelection = getHumanChoice(button.id);
             const computerSelection = getComputerChoice();
@@ -124,6 +143,7 @@ function playGame() {
             
             if (checkWinner()) {
                 isGameOver = true;
+                createResetButton();
             }
         });
     });
