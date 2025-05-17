@@ -102,6 +102,14 @@ body {
     transform: scale(1.02);
 }
 
+.buttons button:active {
+    background-color: #ff002f; /* สีเข้มขึ้นตอนคลิก */
+    color: #0d0a1a;             /* สีตัวอักษร */
+    filter: drop-shadow(0px 0px 16px #ff002f);
+    transform: scale(0.98);    /* กดยุบเล็กน้อย */
+    border: solid #ff002f 2px;
+}
+
 
 .result-container,
 .reset {
