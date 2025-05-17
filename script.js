@@ -29,15 +29,20 @@ function playGame() {
     let round = 0;
 
     function playRound(humanChoice, computerChoice) {
-//          rock paper scissors
-// rock
-// paper
-// scissors
         const compareChoice = {
-            rock:       {rock: 'tie', paper: 'lose', scissors: 'win'},
-            paper:       {rock: 'win', paper: 'tie', scissors: 'win'},
-            scissors:       {rock: 'tie', paper: 'lose', scissors: 'tie'}
+            rock:      {rock: 'tie' , paper: 'lose', scissors: 'win'},
+            paper:     {rock: 'win' , paper: 'tie',  scissors: 'lose'},
+            scissors:  {rock: 'lose', paper: 'win',  scissors: 'tie'}
         }
+
+        const result = compareChoice[humanChoice][computerChoice];
+
+        if (result === 'win') {
+            humanScore++;
+        } else if (result == 'lose') {
+            computerScore++;
+        }
+        
         //  compare choice
         // 0 = rock, 1 = paper, 2 = scissors
         // if (humanChoice == computerChoice){
@@ -86,7 +91,7 @@ function playGame() {
         //             humanScore++;
         //             break;
         //     }
-        }
+        
     }
     
     function displayResult(text) {
@@ -135,7 +140,6 @@ function playGame() {
             reset();
             resetButton.remove();
         })
-
     }
 
     const buttons = document.querySelectorAll('button');
