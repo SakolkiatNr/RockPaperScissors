@@ -83,7 +83,7 @@ function playGame() {
 
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
-        button.addEventListener('click', (e) => {
+        button.addEventListener('click', () => {
             if (isGameOver) {
                 return;
             }
