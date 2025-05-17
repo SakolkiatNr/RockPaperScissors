@@ -41,12 +41,12 @@ function playGame() {
                 case 1:
                     console.log("You lose! Paper beats Rock");
                     displayResult("You lose! Paper beats Rock")
-                    computerScore ++;
+                    computerScore++;
                     break;
                 case 2:
                     console.log("You win! Rock beats Scissors");
                     displayResult("You win! Rock beats Scissors");
-                    changeHumanScore();
+                    humanScore++;
                     break;
             }
         }
@@ -55,7 +55,7 @@ function playGame() {
                 case 0:
                     console.log("You win! Paper beats Rock");
                     displayResult("You win! Paper beats Rock")
-                    changeHumanScore();
+                    humanScore++;
                     break;
                 case 1:
                     console.log("It's a tie!");
@@ -78,7 +78,7 @@ function playGame() {
                 case 1:
                     console.log('You Win! Scissors beats Paper');
                     displayResult('You Win! Scissors beats Paper');
-                    changeHumanScore();
+                    humanScore++;
                     break;
                 case 2:
                     console.log("It's a tie!");
@@ -96,14 +96,12 @@ function playGame() {
         result.appendChild(content);
     }
 
-    function changeHumanScore() {
-        humanScore++;
+    function displayHumanScore() {
         const scoreDisplay = document.querySelector('#player');
         scoreDisplay.textContent = humanScore;
     }
 
-    function changeComputerScore() {
-        computerScore++;
+    function displayComputerScore() {
         const scoreDisplay = document.querySelector('#computer');
         scoreDisplay.textContent = computerScore;
     }
@@ -115,6 +113,8 @@ function playGame() {
             const playerSelection = getHumanChoice(button.id);
             const computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
+            displayComputerScore();
+            displayHumanScore();
         });
     });
     
