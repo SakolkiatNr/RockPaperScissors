@@ -89,25 +89,25 @@ function playGame() {
         }
     }
 
-    // Play 5 rounds
-    for (let i = 0; i < 5; i++) {
-        // Get player's choice
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+    // // Play 5 rounds
+    // for (let i = 0; i < 5; i++) {
+    //     // Get player's choice
+    //     const humanSelection = getHumanChoice();
+    //     const computerSelection = getComputerChoice();
         
-        console.log('Round ' + ( i+1 ));
-        playRound(humanSelection, computerSelection);
-        console.log('Player score: ' + humanScore + '  |  Computer score: ' + computerScore);
-        console.log('');
-    }
-
-    if (humanScore > computerScore) {
-        console.log('Congratulations! You Win.');
-    } else if (humanScore == computerScore) {
-        console.log("It's a draw!");
-    } else {
-        console.log('You lose!');
-    }
+    //     console.log('Round ' + ( i+1 ));
+    //     playRound(humanSelection, computerSelection);
+    //     console.log('Player score: ' + humanScore + '  |  Computer score: ' + computerScore);
+    //     console.log('');
+    // }
+    
+    // if (humanScore > computerScore) {
+    //     console.log('Congratulations! You Win.');
+    // } else if (humanScore == computerScore) {
+    //     console.log("It's a draw!");
+    // } else {
+    //     console.log('You lose!');
+    // }
 }
 
 playGame();
