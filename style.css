@@ -103,18 +103,21 @@ body {
 }
 
 .buttons button:active {
-    background-color: #ff002f; /* สีเข้มขึ้นตอนคลิก */
-    color: #0d0a1a;             /* สีตัวอักษร */
+    background-color: #ff002f; 
+    color: #0d0a1a;             
     filter: drop-shadow(0px 0px 16px #ff002f);
-    transform: scale(0.98);    /* กดยุบเล็กน้อย */
+    transform: scale(0.98);   
     border: solid #ff002f 2px;
 }
 
 
-.result-container,
-.reset {
+.result-container {
+    font-family: 'abduction2002';
+    font-size: 32px;
+    font-weight: bold;
     color: #CCCCCC;
     text-align: center;
+    /* text-transform: uppercase; */
 }
 
 
