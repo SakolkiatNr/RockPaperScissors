@@ -2,6 +2,10 @@
     font-family: 'abduction2002';
     src: url(resource/font/abduction2002.ttf) format('truetype');
 }
+@font-face {
+    font-family: 'pointless';
+    src: url(resource/font/Pointless.ttf) format('truetype');
+}
 .zen-dots-regular {
   font-family: "Zen Dots", sans-serif;
   font-weight: 400;
@@ -52,9 +56,7 @@ body {
     align-items: flex-end;
 }
 .score-container {
-    
     margin: 25px;
-
 }
 #player, #computer {
     margin: 0;
@@ -63,10 +65,13 @@ body {
     font-size: 200px;
     filter: drop-shadow(0px 0px 7px #ff003c);
 }
+
 #winner {
-    color: #CCCCCC;
-    font-size: 32px;
-    font-family: 'Zen Dots';
+    font-size: 42px;
+    color: #FF7433	;
+    font-family: 'pointless', 'sans-serif';
+    text-align: center;
+    filter: drop-shadow(0px 0px 8px #FF5722);
 }
 
 .buttons {
@@ -116,8 +121,8 @@ button:active {
 
 
 .result-container {
-    font-family: 'abduction2002';
-    font-size: 24px;
+    font-family: 'pointless', 'sans-serif';
+    font-size: 18px;
     font-weight: lighter;
     color: #CCCCCC;
     text-align: center;
