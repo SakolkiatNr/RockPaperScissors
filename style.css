@@ -2,25 +2,35 @@
     font-family: 'abduction2002';
     src: url(resource/font/abduction2002.ttf) format('truetype');
 }
-/* * {
+.zen-dots-regular {
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* {
     margin: 0;
     padding: 0;
-} */
+}
 body {
     background-color: rgb(13, 10, 26);
     font-family: 'abduction2002', sans-serif,'';
 }
 .logo {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 1;
     text-align: center;
     color: #FF003C;
     padding: 24px;
-    font-size: 75px;
+    font-size: 50px;
     letter-spacing: 2px;
     font-weight: 1;
     
 }
 
-.score, .buttons, #winner {
+.score, #winner {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -34,6 +44,7 @@ body {
 
 .player,
 .computer {
+    padding: 12px 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -41,9 +52,38 @@ body {
 
 #player, #computer {
     margin: 0;
+    padding: 20px 0px;
     color: #FF003C;
     font-size: 200px;
     filter: drop-shadow(0px 0px 7px #ff003c);
+}
+#winner {
+    color: #CCCCCC;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+}
+
+.buttons button {
+    font-family: 'Zen Dots', 'san-serif';
+    color: #ff003c;
+    font-size: 28px;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    width: 250px;
+    padding: 12px 0px;
+    
+    border-radius: 8px;
+    background-color: transparent;
+    border: solid #FF003C 3px;
+    
 }
 
 .result-container,
@@ -51,3 +91,7 @@ body {
     color: #CCCCCC;
     text-align: center;
 }
+
+
+
+
