@@ -106,25 +106,36 @@ function playGame() {
         scoreDisplay.textContent = computerScore;
     }
 
-    // User button input
+    function checkWinner() {
+        if (humanScore == 5 || computerScore == 5) {
+            const winner = document.querySelector('#winner');
+            if (humanScore > computerScore) {
+                winner.textContent = 'YOU WIN!';
+            } else {
+                winner.textContent = 'YOU LOSE!';
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            if (checkWinner()) {
+                e.stopImmediatePropagation();
+                return;
+            }
             const playerSelection = getHumanChoice(button.id);
             const computerSelection = getComputerChoice();
+
             playRound(playerSelection, computerSelection);
-            displayComputerScore();
             displayHumanScore();
+            displayComputerScore();
+            
         });
     });
-    
-    // if (humanScore > computerScore) {
-    //     console.log('Congratulations! You Win.');
-    // } else if (humanScore == computerScore) {
-    //     console.log("It's a draw!");
-    // } else {
-    //     console.log('You lose!');
-    // }
 }
 
 playGame();
