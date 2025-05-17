@@ -1,27 +1,9 @@
-// Function that return the computer choice
-// randomly return 0-2 as a "rock", "paper" or "scissors"
-// 0 = rock, 1 = paper, 2 = scissors
-
-// Get a random number from 0 1 2 
 function getComputerChoice() {
     const choice = ['rock', 'paper', 'scissors'];
     let randomNum = Math.floor(Math.random() * 3);
     return choice[randomNum];
 }
 
-// Function that take user input and turn into number
-function getHumanChoice(choice) {
-    switch (choice) {
-        case 'rock' :
-            return 0;
-        case 'paper' :
-            return 1;
-        case 'scissors' :
-            return 2;
-    }
-}
-
-// Function to play the entire game
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
@@ -36,62 +18,19 @@ function playGame() {
         }
 
         const result = compareChoice[humanChoice][computerChoice];
+        const winText = `You ${result}! ${humanChoice} beats ${computerChoice}`
+        const lostText = `You ${result}! ${computerChoice} beats ${humanChoice}`
 
         if (result === 'win') {
             humanScore++;
+            displayResult(winText);
         } else if (result == 'lose') {
             computerScore++;
+            displayResult(lostText);
+        } else {
+            displayResult("It's a tie!");
         }
-        
-        //  compare choice
-        // 0 = rock, 1 = paper, 2 = scissors
-        // if (humanChoice == computerChoice){
-        //     console.log("It's a tie!");
-        //     displayResult("It's a tie!");
-        //     return;
-        // }
 
-        // if (humanChoice == 0) {
-        //     switch (computerChoice) {
-        //         case 1:
-        //             console.log("You lose! Paper beats Rock");
-        //             displayResult("You lose! Paper beats Rock")
-        //             computerScore++;
-        //             break;
-        //         case 2:
-        //             console.log("You win! Rock beats Scissors");
-        //             displayResult("You win! Rock beats Scissors");
-        //             humanScore++;
-        //             break;
-        //     }
-        // }
-        // else if (humanChoice == 1) {
-        //     switch (computerChoice) {
-        //         case 0:
-        //             console.log("You win! Paper beats Rock");
-        //             displayResult("You win! Paper beats Rock")
-        //             humanScore++;
-        //             break;
-        //         case 2:
-        //             console.log("You lose! Scissors beats Paper");
-        //             displayResult("You lose! Scissors beats Paper");
-        //             computerScore++;
-        //             break;
-        //     }
-        // } else {
-        //     switch (computerChoice) {
-        //         case 0:
-        //             console.log('You lose! Rock beats Scissors');
-        //             displayResult('You lose! Rock beats Scissors');
-        //             computerScore++;
-        //             break;
-        //         case 1:
-        //             console.log('You Win! Scissors beats Paper');
-        //             displayResult('You Win! Scissors beats Paper');
-        //             humanScore++;
-        //             break;
-        //     }
-        
     }
     
     function displayResult(text) {
@@ -135,7 +74,7 @@ function playGame() {
         resetButton.setAttribute('class', 'reset-button');
         resetButton.textContent = 'Play again';
         target.appendChild(resetButton);
-
+        
         resetButton.addEventListener('click', () => {
             reset();
             resetButton.remove();
