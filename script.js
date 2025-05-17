@@ -24,13 +24,9 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let isGameOver = false;
+    let round = 0;
 
-    // takes the human and computer player choices as argument
-    // play a single round
-    // increments the round winner's score
-    // log winner announcement
     function playRound(humanChoice, computerChoice) {
-
         //  compare choice
         // 0 = rock, 1 = paper, 2 = scissors
         if (humanChoice == computerChoice){
@@ -84,10 +80,7 @@ function playGame() {
     
     function displayResult(text) {
         const result = document.querySelector('.result');
-        const content = document.createElement("p");
-        content.classList.add('result');
-        content.textContent = text;
-        result.appendChild(content);
+        result.textContent = text;
     }
 
     function displayScore() {
@@ -100,24 +93,30 @@ function playGame() {
     function checkWinner() {
         if (humanScore == 5 || computerScore == 5) {
             const winner = document.querySelector('#winner');
-            if (humanScore > computerScore) {
-                winner.textContent = 'YOU WIN!';
-            } else {
-                winner.textContent = 'YOU LOSE!';
-            }
+            winner.textContent = humanScore > computerScore ? 'YOU WIN!' : 'YOU LOSE!';
             return true;
         }
         return false;
     }
 
+    function reset() {
+        humanScore = 0;
+        computerScore = 0;
+        isGameOver = false;
+
+        // clear screen
+        displayScore();
+        const result = document.querySelector('.result');
+        const winner = document.querySelector('#winner');
+        result.textContent = "";
+        winner.textContent = "";
+    }
 
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            if (checkWinner() || isGameOver) {
-                e.stopImmediatePropagation();
-                return;
-            }
+            if (isGameOver) return;
+
             const playerSelection = getHumanChoice(button.id);
             const computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
@@ -126,7 +125,6 @@ function playGame() {
             if (checkWinner()) {
                 isGameOver = true;
             }
-            
         });
     });
 }
