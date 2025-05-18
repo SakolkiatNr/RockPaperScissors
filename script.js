@@ -74,16 +74,24 @@ function playGame() {
         resetButton.setAttribute('class', 'reset-button');
         resetButton.textContent = 'Play again';
         target.appendChild(resetButton);
-        
+
         resetButton.addEventListener('click', () => {
+            playClickSound();
             reset();
             resetButton.remove();
         })
     }
 
+    function playClickSound() {
+        const audio = document.querySelector('.click');
+        audio.currentTime = 0;
+        audio.play();
+    }
+
     const buttons = document.querySelectorAll('button');
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
+            playClickSound();
             if (isGameOver) {
                 return;
             }
