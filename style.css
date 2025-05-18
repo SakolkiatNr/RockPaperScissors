@@ -21,18 +21,18 @@ body {
     background-color: rgb(13, 10, 26);
     font-family: 'abduction2002', sans-serif,'';
 }
-.logo {
+.logo { 
     margin: 18px;
-    display: flex;
-    justify-content: center;
-    flex-shrink: 1;
+    display: block;
     text-align: center;
     color: #FF003C;
     padding: 24px;
     font-size: 50px;
     letter-spacing: 2px;
     font-weight: 1;
-    
+
+    word-wrap: break-word;
+
 }
 
 .score, #winner {
@@ -44,8 +44,7 @@ body {
 .score {
     color: #CCCCCC;
     display: flex;
-    justify-content: center;
-    gap: 200px;
+    justify-content: space-evenly;
 }
 
 .player,
@@ -62,7 +61,7 @@ body {
     margin: 0;
     padding: 20px 0px;
     color: #FF003C;
-    font-size: 200px;
+    font-size: 120px;
     filter: drop-shadow(0px 0px 7px #ff003c);
 }
 
@@ -76,6 +75,7 @@ body {
 
 .buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 12px;
@@ -126,6 +126,7 @@ button:active {
     font-weight: lighter;
     color: #CCCCCC;
     text-align: center;
+    padding: 12px;
     /* text-transform: uppercase; */
 }
 
@@ -135,8 +136,10 @@ button:active {
     justify-content: center;
 }
 
-button {
-    width: 774px;
+.reset button {
+    flex: 0 1 774px;
+    margin: 0px 12px;
+    max-width: calc(250px * 3 + 24px);
 }
 
 
