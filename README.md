@@ -24,4 +24,8 @@
  - Implement custom fonts and audio in web apps
  - Git branching and merging
 
+ ## Tools
+  - VSCode, Git
+  - CSS Tools: Flexbox, transitions
+
 
