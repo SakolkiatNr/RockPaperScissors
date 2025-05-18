@@ -1,16 +1,27 @@
 # RockPaperScissors
 
- ## Overview
- A classic Rock Paper Scissors game built with JavaScript. This project focuses on applying core Javascript concepts and logic structuring.
+ ## Preview
+ ![Game Preview](/resource/livePreview/preview.gif)
 
+ ## Overview
+ A classic Rock Paper Scissors game built with HTML,CSS and JavaScript. This project focuses on applying core Javascript concepts and logic structuring.
+
+ This project includes custom fonts, responsive layout, and click sound effect aims to create interactive browser experience.
+
+ ## Features
+ - Interactive UI 
+ - Modular code
+ - Retro-style click button sound
+ - Cassette futurism, Cyberpunk and bladeRunner inspired with custom fonts and glowing neo effects
+ - Responsive Layout
 
  ## What I Learned
- - Writing function and applying control flow with `if/else` and `switch`
- - Using loops to run multiple rounds of game
- - Generating random choices and comparing outcomes
- - Structuring a simple project from logic to execution
+ - Writing function and applying control
+ - Structuring project from logic to polished UI
+ - DOM manipulations and event handling
+ - Applying CSS transitions, hover/active states, and responsive design
+ - Implement custom fonts and audio in web apps
+ - Git branching and merging
 
 ##  Live Demo
-This game will be played entirely on console
-
-[Play the Game](https://sakolkiatnr.github.io/RockPaperScissors/)
+[Play!](https://sakolkiatnr.github.io/RockPaperScissors/)
