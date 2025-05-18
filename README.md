@@ -1,5 +1,6 @@
 # RockPaperScissors
-
+ ##  Live Demo
+ [Play!](https://sakolkiatnr.github.io/RockPaperScissors/)
  ## Preview
  ![Game Preview](/resource/livePreview/preview.gif)
 
@@ -23,5 +24,4 @@
  - Implement custom fonts and audio in web apps
  - Git branching and merging
 
-##  Live Demo
-[Play!](https://sakolkiatnr.github.io/RockPaperScissors/)
+
