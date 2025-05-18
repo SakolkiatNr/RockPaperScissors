@@ -11,35 +11,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="logo">ROCK·PAPER·SCISSOR </h1>
-    <div class="score-container">
-        <div class="score">
-            <div class="player">
-                <h3 class="name">you</h2>
-                <p id="player">0</p>
+    <div class="content-container">
+        <h1 class="logo">ROCK·PAPER·SCISSOR </h1>
+        <div class="score-container">
+            <div class="score">
+                <div class="player">
+                    <h3 class="name">you</h2>
+                    <p id="player">0</p>
+                </div>
+                <div class="computer">
+                    <h3 class="name">opponent</h2>
+                    <p id="computer">0</p>
+                </div>
             </div>
-            <div class="computer">
-                <h3 class="name">opponent</h2>
-                <p id="computer">0</p>
+            <div class="Winner-container">
+                <h2 id="winner"></h2>
             </div>
-        </div>
-        <div class="Winner-container">
-            <h2 id="winner"></h2>
-        </div>
-
-    </div>
-
-    <div class="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
-
-    <div class="reset"></div>
     
-    <div class="result-container">
-        <p class="result"></p>
+        </div>
+    
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    
+        <div class="reset"></div>
+        
+        <div class="result-container">
+            <p class="result"></p>
+        </div>
     </div>
+
+    <audio class="click" src="resource/sound/flip-switch-304548.mp3"></audio>
+
 
     
 </body>
